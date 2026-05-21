@@ -1,42 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+    <!-- CONFIGURAÇÕES BÁSICAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- FONTES GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- TÍTULO DO SITE -->
     <title>Velutto Café</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="estilo.velluto.css">
 </head>
 
 <body>
-    <main>
-        <header class="header">
-    <div class="logo">
-        Velutto Café
-    </div>
-    <div class="menu-toggle">
-        ☰
-    </div>
-    <div class="header-right">
-        <button class="dark-toggle">🌙</button>
-        <nav class="nav">
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#cardapio">Cardápio</a>
-            <a href="#galeria">Galeria</a>
-            <a href="#reserva">Reserva</a>
-            <a href="#localizacao">Localização</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </div>
-</header>
 
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- HEADER / MENU -->
+        <header class="header">
+
+            <div class="logo">
+                Velutto Café
+            </div>
+
+            <div class="menu-toggle">
+                ☰
+            </div>
+
+            <div class="header-right">
+
+                <button class="dark-toggle">
+                    🌙
+                </button>
+
+                <nav class="nav">
+                    <a href="#inicio">Início</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#cardapio">Cardápio</a>
+                    <a href="#galeria">Galeria</a>
+                    <a href="#reserva">Reserva</a>
+                    <a href="#localizacao">Localização</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+
+            </div>
+
+        </header>
+
+        <!-- HERO / INÍCIO -->
         <section class="hero" id="inicio">
+
             <div class="hero-text">
                 <span>Café artesanal japonês</span>
                 <h1>Velutto Café</h1>
@@ -47,9 +67,12 @@
             <div class="hero-image">
                 <img src="imagens/hero1.png" alt="Velutto Café">
             </div>
+
         </section>
 
+        <!-- SOBRE -->
         <section class="sobre hidden" id="sobre">
+
             <div class="sobre-content">
                 <span>Sobre nós</span>
                 <h2>Feito com calma, servido com cuidado.</h2>
@@ -58,9 +81,12 @@
                     Cada detalhe foi pensado para criar um ambiente acolhedor, silencioso e elegante.
                 </p>
             </div>
+
         </section>
 
-        <section class="cardapio hidden" id="cardapio"> <!-- começo do cardápio -->
+        <!-- CARDÁPIO -->
+        <section class="cardapio hidden" id="cardapio">
+
             <span>Cardápio</span>
             <h2>Especiais da casa</h2>
 
@@ -109,77 +135,113 @@
                 </article>
 
             </div>
-        </section> <!-- fim do cardápio -->
 
+        </section>
+
+        <!-- GALERIA -->
         <section class="galeria hidden" id="galeria">
+
             <span>Ambiente</span>
             <h2>Um espaço feito para desacelerar.</h2>
+
             <div class="galeria-grid">
-            <img src="imagens/ambientevelutto.png" alt="Ambiente Velutto Café">
-            <img src="imagens/detalhesvalutto.png" alt="Detalhes japoneses do café">
-            <img src="imagens/mesavelutto.png" alt="Mesa com café artesanal">
+                <img src="imagens/ambientevelutto.png" alt="Ambiente Velutto Café">
+                <img src="imagens/detalhesvalutto.png" alt="Detalhes japoneses do café">
+                <img src="imagens/mesavelutto.png" alt="Mesa com café artesanal">
             </div>
+
         </section>
 
+        <!-- RESERVA -->
+        <section class="reserva hidden" id="reserva">
 
-        <section class="reserva hidden" id="reserva"> <!-- começo da reserva -->
             <span>Reserva</span>
             <h2>Reserve sua experiência</h2>
-            <p>No Velutto Café, cada detalhe foi pensado para desacelerar o tempo.
-            Reserve sua mesa e aproveite uma experiência acolhedora, silenciosa e feita com calma.</p>
+
+            <p>
+                No Velutto Café, cada detalhe foi pensado para desacelerar o tempo.
+                Reserve sua mesa e aproveite uma experiência acolhedora, silenciosa e feita com calma.
+            </p>
+
             <form class="reserva-form">
+
                 <input type="text" placeholder="Seu nome">
+
                 <label>Data da reserva</label>
                 <input type="date">
+
                 <label>Horário da reserva</label>
                 <input type="time">
-                <input type="number" name="quantidade-pessoas" min="1" max="10" placeholder="Número de pessoas">
-                <button type="submit" class="btn">Fazer Reserva</button>
-            </form>
-        </section> <!-- fim da reserva -->
 
-        <section class="localizacao hidden" id="localizacao">
-        <span>Localização</span>
-        <h2>Um refúgio japonês no coração da cidade.</h2>
-        <div class="localizacao-card">
-            <p>Liberdade • São Paulo</p>
-            <p>Rua Hanami, 237</p>
-            <p>Todos os dias • 08h às 22h</p>
-        </div>
+                <input type="number" name="quantidade-pessoas" min="1" max="10" placeholder="Número de pessoas">
+
+                <button type="submit" class="btn">
+                    Fazer Reserva
+                </button>
+
+            </form>
+
         </section>
 
-        <section class="contato hidden" id="contato"><!-- começo do contato -->
+        <!-- LOCALIZAÇÃO -->
+        <section class="localizacao hidden" id="localizacao">
+
+            <span>Localização</span>
+            <h2>Um refúgio japonês no coração da cidade.</h2>
+
+            <div class="localizacao-card">
+                <p>Liberdade • São Paulo</p>
+                <p>Rua Hanami, 237</p>
+                <p>Todos os dias • 08h às 22h</p>
+            </div>
+
+        </section>
+
+        <!-- CONTATO -->
+        <section class="contato hidden" id="contato">
+
             <span>Contato</span>
             <h2>Venha tomar um café conosco</h2>
-            <p>Entre em contato pelas redes sociais ou venha viver a experiência Velutto Café.</p>
+
+            <p>
+                Entre em contato pelas redes sociais ou venha viver a experiência Velutto Café.
+            </p>
 
             <a href="https://instagram.com/" target="_blank" class="btn">
                 Instagram
             </a>
-        </section> <!-- fim do contato -->
-        
+
+        </section>
+
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
+
         <div class="footer-content">
+
             <div class="footer-brand">
                 <h2>Velutto Café</h2>
                 <p>Café artesanal japonês, feito com calma e servido com cuidado.</p>
             </div>
+
             <div class="footer-info">
                 <h3>Visite-nos</h3>
                 <p>Rua Hanami, 237</p>
                 <p>Liberdade • São Paulo</p>
                 <p>08h às 22h</p>
             </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2026 Velutto Café. Todos os direitos reservados.</p>
             </div>
+
         </div>
+
     </footer>
-    
+
+    <!-- JAVASCRIPT: ANIMAÇÃO AO SCROLL -->
     <script>
-        // Animação de fade-in para as seções
         const sections = document.querySelectorAll('.hidden');
 
         const observer = new IntersectionObserver(entries => {
@@ -197,29 +259,25 @@
         });
     </script>
 
+    <!-- JAVASCRIPT: MENU MOBILE -->
     <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-
-    menuToggle.addEventListener('click', () => {
-
-        nav.classList.toggle('active');
-
-    });
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
     </script>
 
+    <!-- JAVASCRIPT: DARK MODE -->
     <script>
+        const darkToggle = document.querySelector('.dark-toggle');
 
-const darkToggle = document.querySelector('.dark-toggle');
-
-darkToggle.addEventListener('click', () => {
-
-    document.body.classList.toggle('dark-mode');
-
-});
-
+        darkToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
     </script>
 
 </body>
+
 </html>
