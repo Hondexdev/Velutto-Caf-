@@ -652,7 +652,7 @@ body.dark-mode .reserva label {
 
     .hero-image img {
         width: 100%;
-        max-width: 560px;
+        max-width: 300px;
         height: auto;
         object-fit: contain;
         border-radius: 24px;
