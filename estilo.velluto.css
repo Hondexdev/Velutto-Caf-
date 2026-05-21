@@ -169,14 +169,10 @@ span {
 .hero-image img {
     width: 100%;
     max-width: 380px;
-
     height: 420px;
-
     object-fit: contain;
     object-position: center;
-
     border-radius: 28px;
-
     display: block;
     margin: 0 auto;
 }
