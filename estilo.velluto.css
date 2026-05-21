@@ -126,12 +126,12 @@ span {
 /* HERO */
 
 .hero {
-    min-height: 90vh;
-    padding: 180px 90px 80px;
-    display: flex;
+    min-height: 100vh;
+    padding: 160px 90px 80px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
-    justify-content: space-between;
-    gap: 80px;
+    gap: 40px;
 }
 
 .hero-text {
@@ -139,16 +139,16 @@ span {
 }
 
 .hero-image {
-    background: #f5f1eb;
-    padding: 20px;
-    border-radius: 35px;
+    width: 100%;
+    max-width: 900px;
 }
 
 .hero-image img {
-    width: 620px;
-    border-radius: 25px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: 720px;
     object-fit: cover;
+    border-radius: 36px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.14);
     transition: 0.4s;
     display: block;
 }
@@ -159,7 +159,7 @@ span {
 
 /* SOBRE */
 
-.sobre { 
+.sobre {
     padding: 110px 90px;
     background-color: var(--bg-secondary);
     border-top: 1px solid rgba(0, 0, 0, 0.04);
@@ -171,6 +171,7 @@ span {
 
 .sobre h2,
 .cardapio h2,
+.galeria h2,
 .contato h2,
 .reserva h2 {
     font-size: 56px;
@@ -239,6 +240,39 @@ span {
     display: block;
     letter-spacing: 0.5px;
     margin-top: 18px;
+}
+
+/* GALERIA */
+
+.galeria {
+    padding: 120px 90px;
+    background-color: var(--bg-secondary);
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 50px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    transition: 0.4s;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.03);
 }
 
 /* RESERVA */
@@ -321,9 +355,54 @@ span {
 .footer {
     background-color: #111;
     color: white;
-    text-align: center;
     padding: 30px 20px;
     margin-top: 80px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.footer-brand {
+    max-width: 420px;
+}
+
+.footer-brand h2 {
+    font-size: 42px;
+    margin-bottom: 18px;
+    color: #f5eee6;
+}
+
+.footer-brand p {
+    color: #b7a79a;
+    line-height: 1.8;
+}
+
+.footer-info h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #f5eee6;
+}
+
+.footer-info p {
+    color: #b7a79a;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 24px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    max-width: 100%;
+    color: #8e8176;
+    font-size: 14px;
 }
 
 /* RESPONSIVO */
@@ -362,24 +441,37 @@ span {
         border-radius: 24px;
     }
 
-    .hero-image img {
-        width: 100%;
-        max-width: 420px;
-        border-radius: 18px;
-    }
+.hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 24px;
+}
 
     .sobre,
     .cardapio,
+    .galeria,
     .reserva,
+    .localizacao,
     .contato {
         padding: 80px 24px;
     }
 
     .sobre h2,
     .cardapio h2,
+    .galeria h2,
     .contato h2,
     .reserva h2 {
         font-size: 42px;
+    }
+
+        .localizacao h2 {
+        font-size: 42px;
+    }
+
+    .localizacao-card {
+        padding: 32px 24px;
     }
 
     .cardapio-grid {
@@ -393,6 +485,14 @@ span {
 
     .item-card img {
         height: 220px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-grid img {
+        height: 300px;
     }
 }
 
@@ -408,6 +508,7 @@ span {
 
     .sobre h2,
     .cardapio h2,
+    .galeria h2,
     .contato h2,
     .reserva h2 {
         font-size: 36px;
@@ -441,11 +542,12 @@ span {
 
     .hero-image img {
         width: 100%;
-        max-width: 420px;
+        max-width: 480px;
     }
 
     .sobre,
     .cardapio,
+    .galeria,
     .reserva,
     .contato {
         padding: 70px 32px;
@@ -457,5 +559,223 @@ span {
 
     .item-card img {
         height: 200px;
+    }
+}
+
+/* ANIMAÇÃO */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MENU MOBILE */
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(246, 241, 234, 0.98);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+        display: none;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+}
+
+/* DARK MODE */
+
+.dark-toggle {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.dark-toggle:hover {
+    transform: scale(1.1);
+}
+
+body.dark-mode {
+    background-color: #161311;
+    color: #f5eee6;
+}
+
+body.dark-mode .header {
+    background: rgba(22, 19, 17, 0.85);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+body.dark-mode .nav {
+    background: rgba(22, 19, 17, 0.98);
+}
+
+body.dark-mode .nav a,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .logo,
+body.dark-mode .dark-toggle,
+body.dark-mode .menu-toggle {
+    color: #f5eee6;
+}
+
+body.dark-mode p {
+    color: #c7b8aa;
+}
+
+body.dark-mode .sobre,
+body.dark-mode .galeria,
+body.dark-mode .contato {
+    background-color: #211c18;
+}
+
+body.dark-mode .cardapio,
+body.dark-mode .reserva {
+    background-color: #161311;
+}
+
+body.dark-mode .item-card {
+    background-color: #211c18;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+body.dark-mode .btn {
+    background-color: #9b7b53;
+}
+
+body.dark-mode .btn:hover {
+    background-color: #b89569;
+}
+
+body.dark-mode .footer {
+    background-color: #0d0b0a;
+}
+
+body.dark-mode .reserva input {
+    background-color: #2a241f;
+    color: #f5eee6;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+body.dark-mode .reserva input::placeholder {
+    color: #b7a79a;
+}
+
+body.dark-mode .reserva label {
+    color: #d8c9bc;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+body.dark-mode .localizacao {
+    background-color: #161311;
+}
+
+body.dark-mode .localizacao-card {
+    background-color: #211c18;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* LOCALIZAÇÃO */
+
+.localizacao {
+    padding: 120px 90px;
+    background-color: var(--bg-primary);
+    text-align: center;
+}
+
+.localizacao h2 {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 50px;
+}
+
+.localizacao-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 32px;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.localizacao-card p {
+    max-width: 100%;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.localizacao-card p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+
+    .footer {
+        padding: 60px 24px 24px;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-brand h2 {
+        font-size: 34px;
+    }
+
+    .footer-info h3 {
+        font-size: 20px;
+    }
+
+    .footer-brand p,
+    .footer-info p {
+        max-width: 100%;
+        font-size: 15px;
+    }
+
+    .footer-bottom p {
+        font-size: 13px;
+        line-height: 1.6;
     }
 }
