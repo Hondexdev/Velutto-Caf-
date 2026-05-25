@@ -10,12 +10,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- TÍTULO DO SITE -->
     <title>Velutto Café</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="estilo.velluto.css">
+    <link rel="icon" type="image/png" href="imagens/favicon.png">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
 
             <div class="header-right">
 
-                <button class="dark-toggle">
+                <button class="dark-toggle" id="theme-toggle">
                     🌙
                 </button>
 
@@ -269,14 +269,35 @@
         });
     </script>
 
-    <!-- JAVASCRIPT: DARK MODE -->
-    <script>
-        const darkToggle = document.querySelector('.dark-toggle');
+    <!-- resto do site -->
 
-        darkToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
+    <script>
+    const themeToggle = document.getElementById('theme-toggle');
+
+    function enableDarkMode() {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+    }
+
+    function disableDarkMode() {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        if (document.body.classList.contains('dark-mode')) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+
+    // Mantém o tema salvo após atualizar a página
+    if (localStorage.getItem('theme') === 'dark') {
+        enableDarkMode();
+    }
     </script>
+    
 
 </body>
 
